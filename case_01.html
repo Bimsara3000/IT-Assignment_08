@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 01</title>
+
+    <style>
+
+        section {
+            width: 100vw;
+            height: 100px;
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        div {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: crimson;
+        }
+
+        img {
+            height: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>JS Que</h1>
+
+<section>
+    <div>A</div>
+    <img src="assets/images/walk.gif">
+    <div>B</div>
+    <img src="assets/images/walk.gif">
+    <div>C</div>
+    <img src="assets/images/walk.gif">
+    <div>D</div>
+    <img src="assets/images/walk.gif">
+    <div>E</div>
+    <img src="assets/images/walk.gif">
+    <div>F</div>
+</section>
+
+<script>
+
+    let data = ['A','B','C','D','E','F'];
+
+    const updateLetters = () => {
+        let lastLetter = data.pop();
+        data.unshift(lastLetter);
+
+        data.map((item, index) => {
+            document.getElementsByTagName('div')[index].innerText = item;
+        });
+
+        // for (let i = 0; i < data.length; i++) {
+        //     document.getElementsByTagName('div')[i].innerText = data[i];
+        // }
+    }
+
+    setInterval(updateLetters, 3000);
+
+</script>
+</body>
+</html>
